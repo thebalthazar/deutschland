@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deutschland Consultoria</title>
+  <meta name="description" content="Deutschland Consultoria — consultoria e holding com atuação estratégica, foco em execução, governança e resultados." />
+
+  <!-- Basic SEO for bilingual (single-page toggle). If you later split into /en and /pt, update accordingly. -->
+  <meta property="og:title" content="Deutschland Consultoria" />
+  <meta property="og:description" content="Atuação estratégica em consultoria e holding — clareza, governança e execução." />
+  <meta name="theme-color" content="#0b0d10" />
+
+  <!-- Simple SVG favicon (inline) -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <rect width="64" height="64" fill="white"/>
+    <text x="12" y="44" font-size="34" font-family="Arial" fill="black">d</text>
+    <rect x="30" y="16" width="26" height="8" fill="black"/>
+    <rect x="30" y="28" width="18" height="8" fill="%23DD0000"/>
+    <rect x="30" y="40" width="12" height="8" fill="%23FFCE00"/>
+  </svg>' />
+
+  <style>
+    :root{
+      --bg:#0b0d10;
+      --card:#121621;
+      --white:#ffffff;
+      --line:rgba(255,255,255,.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius: 18px;
+      --max: 1100px;
+
+      --red:#DD0000;
+      --yellow:#FFCE00;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--white);
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(221,0,0,.18), transparent 60%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(255,206,0,.18), transparent 55%),
+                  linear-gradient(180deg, #0b0d10 0%, #07090c 100%);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(7,9,12,.65);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 240px;
+    }
+    .brand svg{height:42px; width:auto}
+    nav{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      font-size:14px; color:rgba(255,255,255,.86);
+      padding:8px 10px; border-radius:10px;
+    }
+    nav a:hover{background: rgba(255,255,255,.06)}
+    .cta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      font-size:14px;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+    .btn:hover{background: rgba(255,255,255,.10)}
+    .btn.primary{
+      background: rgba(255,255,255,.92);
+      color:#0b0d10;
+      border-color: transparent;
+      font-weight:600;
+    }
+    .btn.primary:hover{background: rgba(255,255,255,1)}
+	
+	.btn.secondary{
+      background: rgba(50,50,50,.92);
+      color:#ffffff;
+      border-color: transparent;
+      font-weight:600;
+    }
+    .btn.secondary:hover{background: rgba(255,255,255,1)}
+    .btn.ghost{
+      background: transparent;
+    }
+
+    .lang{
+      display:flex; align-items:center; gap:8px;
+      padding:6px 8px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+    }
+    .lang button{
+      border:0;
+      background:transparent;
+      color: rgba(255,255,255,.82);
+      font-size:13px;
+      padding:6px 10px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+    .lang button[aria-pressed="true"]{
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.95);
+    }
+
+    .hero{padding:64px 0 40px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .headline{
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding:28px;
+      box-shadow: var(--shadow);
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:42px;
+      line-height:1.1;
+      letter-spacing:-.02em;
+    }
+    .lead{
+      margin:0 0 18px;
+      color: rgba(255,255,255,.82);
+      font-size:17px;
+    }
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+    .kpi{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding:14px;
+    }
+    .kpi b{display:block; font-size:16px; margin-bottom:2px}
+    .kpi span{color: rgba(255,255,255,.72); font-size:13px}
+
+    .hero-card{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #0e121a;
+      display:flex;
+      flex-direction:column;
+    }
+    .hero-card img{
+      width:100%; height: 230px; object-fit:cover;
+      filter: saturate(0.95) contrast(1.05);
+    }
+    .hero-card .p{
+      padding:18px;
+      color: rgba(255,255,255,.82);
+      font-size:14px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      font-size:13px;
+      color: rgba(255,255,255,.86);
+      margin-bottom:12px;
+    }
+    .dot{width:8px; height:8px; border-radius:999px; background:linear-gradient(90deg,var(--red),var(--yellow)); opacity:.95}
+
+    section{padding:44px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:18px}
+    h2{margin:0; font-size:24px; letter-spacing:-.01em}
+    .subtitle{margin:0; color: rgba(255,255,255,.72); font-size:14px; max-width: 560px}
+    .grid3{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:16px}
+    .grid2{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:16px}
+    .card{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color: rgba(255,255,255,.78); font-size:14px}
+    .pill{
+      display:inline-block;
+      font-size:12px;
+      color: rgba(255,255,255,.78);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      margin-top:12px;
+    }
+
+    .about{display:grid; grid-template-columns: .95fr 1.05fr; gap:18px; align-items:stretch}
+    .about img{
+      width:100%; height:100%; min-height:320px;
+      object-fit:cover;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      filter: saturate(.95) contrast(1.05);
+    }
+    .about .card{height:100%}
+
+    .contact{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    .contact a{color: rgba(255,255,255,.92)}
+    .contact small{display:block; color: rgba(255,255,255,.62); margin-top:6px}
+    .form{display:grid; gap:10px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.18);
+      color: var(--white);
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus{border-color: rgba(255,255,255,.32)}
+    .hint{color: rgba(255,255,255,.62); font-size:12px; margin-top:6px}
+    .ok{display:none; margin-top:10px; color: rgba(255,255,255,.82); font-size:13px}
+
+    .foot{
+      padding:22px 0 34px;
+      border-top: 1px solid var(--line);
+      color: rgba(255,255,255,.68);
+      font-size:13px;
+    }
+
+    @media (max-width : 1200px ){
+      .hero-grid{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr}
+      h1{font-size:34px}
+      nav{display:none}
+      .brand{min-width:auto}
+    }
+  .secondary {
+}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Deutschland Consultoria - Início">
+        <!-- Inline logo (approximation for web). Replace with your official SVG if desired. -->
+        <svg viewBox="0 0 1300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="deutschland logo">
+          <rect width="1300" height="300" fill="none"/>
+          <text x="90" y="165" font-family="Righteous, Arial, Helvetica, sans-serif" font-size="180" font-weight="600" fill="white">deutschland</text>
+          <rect x="1150" y="45" width="140" height="35" fill="#ffffff"/>
+          <rect x="1150" y="90" width="100" height="35" fill="#DD0000"/>
+          <rect x="1150" y="135" width="70" height="35" fill="#FFCE00"/>
+        </svg>
+      </a>
+
+      <nav aria-label="Navegação">
+        <a href="#servicos" data-i18n="nav_services">Serviços</a>
+        <a href="#como-atuamos" data-i18n="nav_how">Como atuamos</a>
+        <a href="#holding" data-i18n="nav_holding">Holding</a>
+        <a href="#sobre" data-i18n="nav_about">Sobre</a>
+        <a href="#contato" data-i18n="nav_contact">Contato</a>
+      </nav>
+
+      <div class="cta">
+        <div class="lang" aria-label="Selecionar idioma / Language">
+          <button id="btn-pt" type="button" aria-pressed="true">PT</button>
+          <button id="btn-en" type="button" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="container">
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero-grid">
+        <div class="headline">
+          <div class="tag"><span class="dot"></span> <span data-i18n="hero_tag">Consultoria com foco em clareza, governança e execução</span></div>
+          <h1 data-i18n="hero_h1">Estratégia prática para decisões que exigem rigor e velocidade.</h1>
+          <p class="lead" data-i18n="hero_lead">
+            A Deutschland atua como plataforma de consultoria e holding, apoiando empresários e lideranças na estruturação de projetos,
+            processos e decisões com padrão institucional — sem perder a objetividade do dia a dia.
+          </p>
+          <div class="cta" style="margin-top:14px">
+            <a class="btn primary" href="#contato" data-i18n="hero_cta_primary">Falar com a Deutschland</a>
+            <a class="btn" href="#servicos" data-i18n="hero_cta_secondary">Ver serviços</a>
+          </div>
+
+          <div class="kpis" aria-label="Destaques">
+            <div class="kpi"><b data-i18n="kpi1_title">Diagnóstico</b><span data-i18n="kpi1_desc">mapa rápido de riscos e prioridades</span></div>
+            <div class="kpi"><b data-i18n="kpi2_title">Plano</b><span data-i18n="kpi2_desc">roadmap claro e mensurável</span></div>
+            <div class="kpi"><b data-i18n="kpi3_title">Execução</b><span data-i18n="kpi3_desc">rotina, governança e acompanhamento</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Imagem de capa">
+          <img alt="Imagem de consultoria orientada a meta" src="https://i.imgur.com/8t9qi0h.jpeg" />
+          <div class="p" data-i18n="hero_card_p">
+            Atuação em projetos que demandam discrição, alinhamento entre stakeholders e comunicação precisa.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" aria-label="Serviços">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="services_h2">Serviços</h2>
+          <p class="subtitle" data-i18n="services_sub">Escopo modular, adaptado ao seu momento. Projetos pontuais ou acompanhamento contínuo.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3 data-i18n="svc1_title">Estratégia e planejamento</h3>
+          <p data-i18n="svc1_desc">Definição de objetivos, tese, priorização e estrutura de execução com indicadores claros.</p>
+          <span class="pill" data-i18n="svc1_pill">Roadmap • OKRs • Planejamento</span>
+        </div>
+        <div class="card">
+          <h3 data-i18n="svc2_title">Governança e processos</h3>
+          <p data-i18n="svc2_desc">Rotinas de comitê, fluxos de decisão, controles e documentação para elevar o padrão institucional.</p>
+          <span class="pill" data-i18n="svc2_pill">RACI • Comitês • Controles</span>
+        </div>
+        <div class="card">
+          <h3 data-i18n="svc3_title">Projetos e implementação</h3>
+          <p data-i18n="svc3_desc">Gestão de iniciativas do diagnóstico ao go-live, com acompanhamento de prazos, riscos e entregas.</p>
+          <span class="pill" data-i18n="svc3_pill">PMO • Implantação • Risco</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="holding" aria-label="Holding">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="holding_h2">Holding</h2>
+          <p class="subtitle" data-i18n="holding_sub">
+            Além da consultoria, a estrutura de holding permite atuação ampla e estratégica, com visão de alocação e desenvolvimento de negócios em diferentes setores.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3 data-i18n="holding1_title">Atuação transversal</h3>
+          <p data-i18n="holding1_desc">
+            A holding viabiliza análise e participação em oportunidades em múltiplos segmentos — sempre com disciplina de governança, gestão de riscos e criação de valor.
+          </p>
+          <span class="pill" data-i18n="holding1_pill">Tese • Alocação • Gestão</span>
+        </div>
+        <div class="card">
+          <h3 data-i18n="holding2_title">Estratégia, estrutura e execução</h3>
+          <p data-i18n="holding2_desc">
+            Estruturamos decisões de investimento e projetos de crescimento com clareza: hipóteses, métricas, ritos de acompanhamento e documentação consistente.
+          </p>
+          <span class="pill" data-i18n="holding2_pill">Governança • Métricas • Reporting</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-atuamos" aria-label="Como atuamos">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="how_h2">Como atuamos</h2>
+          <p class="subtitle" data-i18n="how_sub">Um método simples: entender, decidir, executar — com transparência e disciplina.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3 data-i18n="how1_title">1) Entendimento</h3>
+          <p data-i18n="how1_desc">Levantamento rápido de contexto, metas, restrições e riscos — com foco no que é material.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="how2_title">2) Direcionamento</h3>
+          <p data-i18n="how2_desc">Proposta de alternativas, trade-offs e plano de ação. Decisão informada e documentada.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="how3_title">3) Execução</h3>
+          <p data-i18n="how3_desc">Ritual de acompanhamento, reporting e gestão de pendências para garantir entrega.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" aria-label="Sobre">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="about_h2">Sobre</h2>
+          <p class="subtitle" data-i18n="about_sub">
+            Consultoria e holding com foco em clareza, disciplina e entrega — compatíveis com ambientes de alta exigência.
+          </p>
+        </div>
+      </div>
+
+      <div class="about">
+        <img alt="Imagem do escritório" src="https://i.imgur.com/9Kt5HAf.jpeg" />
+        <div class="card">
+          <h3 data-i18n="about_card_title">Rigor, discrição e objetividade</h3>
+          <p data-i18n="about_card_p1">
+            A Deutschland foi desenhada para suportar decisões que envolvem múltiplas partes, prazos curtos e alta sensibilidade —
+            com foco em alinhamento, comunicação precisa e execução.
+          </p>
+          <p style="margin-top:12px; color: rgba(255,255,255,.78); font-size:14px" data-i18n="about_card_p2">
+            Se você precisa de um parceiro para estruturar e conduzir iniciativas com disciplina e previsibilidade,
+            fale conosco.
+          </p>
+          <div class="cta" style="margin-top:14px">
+            <a class="btn primary" href="#contato" data-i18n="about_cta_primary">Agendar contato</a>
+            <a class="btn" href="mailto:contato@deutschlandconsultoria.com.br" data-i18n="about_cta_secondary">Enviar e-mail</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" aria-label="Contato">
+      <div class="section-title">
+        <div>
+          <h2 data-i18n="contact_h2">Contato</h2>
+          <p class="subtitle" data-i18n="contact_sub">Conte o contexto em poucas linhas — respondemos com agilidade e objetividade.</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="card">
+          <h3 data-i18n="contact_direct_title">Fale diretamente</h3>
+          <p>
+            <a href="mailto:contato@deutschlandconsultoria.com.br">contato@deutschlandconsultoria.com.br</a><br/>
+            <a href="tel:+5511984425556">+55 11 98442 5556</a>
+            <small data-i18n="contact_direct_note">Atendemos por e-mail, telefone e WhatsApp (se preferir).</small>
+          </p>
+          <div class="pill" data-i18n="contact_direct_pill">Confidencialidade e discrição</div>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="contact_form_title">Envie uma mensagem</h3>
+          <form class="form" id="contactForm">
+            <input name="name" type="text" data-i18n-placeholder="form_name_ph" placeholder="Seu nome" autocomplete="name" required>
+            <input name="email" type="email" data-i18n-placeholder="form_email_ph" placeholder="Seu e-mail" autocomplete="email" required>
+            <textarea name="message" data-i18n-placeholder="form_message_ph" placeholder="Mensagem (objetivo, prazo, contexto)" required></textarea>
+            <button class="btn primary" type="submit" data-i18n="form_send">Enviar</button>
+            <div class="hint" data-i18n="form_hint">Este formulário abre seu cliente de e-mail com a mensagem preenchida.</div>
+            <div class="ok" id="formOk" data-i18n="form_ok">Abrindo seu e-mail…</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="container" style="display:flex; gap:14px; justify-content:space-between; flex-wrap:wrap; align-items:center;">
+    <div>© <span id="y"></span> Deutschland Consultoria Ltda. <span data-i18n="footer_rights">Todos os direitos reservados.</span></div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a class="btn secondary" href="mailto:contato@deutschlandconsultoria.com.br">contato@deutschlandconsultoria.com.br</a>
+      <a class="btn secondary" href="tel:+5511984425556">+55 11 98442 5556</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Lightweight bilingual toggle (PT/EN) for a single-page site.
+  // If you later split into /en and /pt, you can remove this and serve separate pages.
+  const dict = {
+    pt: {
+      nav_services: "Serviços",
+      nav_how: "Como atuamos",
+      nav_holding: "Holding",
+      nav_about: "Sobre",
+      nav_contact: "Contato",
+
+      hero_tag: "Consultoria com foco em clareza, governança e execução",
+      hero_h1: "Estratégia prática para decisões que exigem rigor e velocidade.",
+      hero_lead: "A Deutschland atua como plataforma de consultoria e holding, apoiando empresários e lideranças na estruturação de projetos, processos e decisões com padrão institucional — sem perder a objetividade do dia a dia.",
+      hero_cta_primary: "Falar com a Deutschland",
+      hero_cta_secondary: "Ver serviços",
+      hero_card_p: "Atuação em projetos que demandam discrição, alinhamento entre stakeholders e comunicação precisa.",
+
+      kpi1_title: "Diagnóstico",
+      kpi1_desc: "mapa rápido de riscos e prioridades",
+      kpi2_title: "Plano",
+      kpi2_desc: "roadmap claro e mensurável",
+      kpi3_title: "Execução",
+      kpi3_desc: "rotina, governança e acompanhamento",
+
+      services_h2: "Serviços",
+      services_sub: "Escopo modular, adaptado ao seu momento. Projetos pontuais ou acompanhamento contínuo.",
+      svc1_title: "Estratégia e planejamento",
+      svc1_desc: "Definição de objetivos, tese, priorização e estrutura de execução com indicadores claros.",
+      svc1_pill: "Roadmap • OKRs • Planejamento",
+      svc2_title: "Governança e processos",
+      svc2_desc: "Rotinas de comitê, fluxos de decisão, controles e documentação para elevar o padrão institucional.",
+      svc2_pill: "RACI • Comitês • Controles",
+      svc3_title: "Projetos e implementação",
+      svc3_desc: "Gestão de iniciativas do diagnóstico ao go-live, com acompanhamento de prazos, riscos e entregas.",
+      svc3_pill: "PMO • Implantação • Risco",
+
+      holding_h2: "Holding",
+      holding_sub: "Além da consultoria, a estrutura de holding permite atuação ampla e estratégica, com visão de alocação e desenvolvimento de negócios em diferentes setores.",
+      holding1_title: "Atuação transversal",
+      holding1_desc: "A holding viabiliza análise e participação em oportunidades em múltiplos segmentos — sempre com disciplina de governança, gestão de riscos e criação de valor.",
+      holding1_pill: "Tese • Alocação • Gestão",
+      holding2_title: "Estratégia, estrutura e execução",
+      holding2_desc: "Estruturamos decisões de investimento e projetos de crescimento com clareza: hipóteses, métricas, ritos de acompanhamento e documentação consistente.",
+      holding2_pill: "Governança • Métricas • Reporting",
+
+      how_h2: "Como atuamos",
+      how_sub: "Um método simples: entender, decidir, executar — com transparência e disciplina.",
+      how1_title: "1) Entendimento",
+      how1_desc: "Levantamento rápido de contexto, metas, restrições e riscos — com foco no que é material.",
+      how2_title: "2) Direcionamento",
+      how2_desc: "Proposta de alternativas, trade-offs e plano de ação. Decisão informada e documentada.",
+      how3_title: "3) Execução",
+      how3_desc: "Ritual de acompanhamento, reporting e gestão de pendências para garantir entrega.",
+
+      about_h2: "Sobre",
+      about_sub: "Consultoria e holding com foco em clareza, disciplina e entrega — compatíveis com ambientes de alta exigência.",
+      about_card_title: "Rigor, discrição e objetividade",
+      about_card_p1: "A Deutschland foi desenhada para suportar decisões que envolvem múltiplas partes, prazos curtos e alta sensibilidade — com foco em alinhamento, comunicação precisa e execução.",
+      about_card_p2: "Se você precisa de um parceiro para estruturar e conduzir iniciativas com disciplina e previsibilidade, fale conosco.",
+      about_cta_primary: "Agendar contato",
+      about_cta_secondary: "Enviar e-mail",
+
+      contact_h2: "Contato",
+      contact_sub: "Conte o contexto em poucas linhas — respondemos com agilidade e objetividade.",
+      contact_direct_title: "Fale diretamente",
+      contact_direct_note: "Atendemos por e-mail, telefone e WhatsApp (se preferir).",
+      contact_direct_pill: "Confidencialidade e discrição",
+      contact_form_title: "Envie uma mensagem",
+      form_send: "Enviar",
+      form_hint: "Este formulário abre seu cliente de e-mail com a mensagem preenchida.",
+      form_ok: "Abrindo seu e-mail…",
+      footer_rights: "Todos os direitos reservados.",
+      form_name_ph: "Seu nome",
+      form_email_ph: "Seu e-mail",
+      form_message_ph: "Mensagem (objetivo, prazo, contexto)",
+    },
+    en: {
+      nav_services: "Services",
+      nav_how: "How we work",
+      nav_holding: "Holding",
+      nav_about: "About",
+      nav_contact: "Contact",
+
+      hero_tag: "Advisory focused on clarity, governance, and execution",
+      hero_h1: "Practical strategy for decisions that demand rigor and speed.",
+      hero_lead: "Deutschland operates as an advisory and holding platform, supporting entrepreneurs and leaders in structuring projects, processes, and decisions to an institutional standard — without losing day‑to‑day pragmatism.",
+      hero_cta_primary: "Talk to Deutschland",
+      hero_cta_secondary: "View services",
+      hero_card_p: "Work on projects that require discretion, stakeholder alignment, and precise communication.",
+
+      kpi1_title: "Diagnosis",
+      kpi1_desc: "rapid map of risks and priorities",
+      kpi2_title: "Plan",
+      kpi2_desc: "clear, measurable roadmap",
+      kpi3_title: "Execution",
+      kpi3_desc: "cadence, governance, follow‑through",
+
+      services_h2: "Services",
+      services_sub: "Modular scope tailored to your moment — one‑off projects or ongoing support.",
+      svc1_title: "Strategy & planning",
+      svc1_desc: "Objectives, thesis, prioritization, and an execution structure with clear KPIs.",
+      svc1_pill: "Roadmap • OKRs • Planning",
+      svc2_title: "Governance & processes",
+      svc2_desc: "Committee routines, decision flows, controls, and documentation to raise institutional standards.",
+      svc2_pill: "RACI • Committees • Controls",
+      svc3_title: "Projects & implementation",
+      svc3_desc: "From diagnosis to go‑live, tracking timelines, risks, and deliverables.",
+      svc3_pill: "PMO • Delivery • Risk",
+
+      holding_h2: "Holding",
+      holding_sub: "Beyond advisory, our holding structure enables broad and strategic action — supporting business development and capital allocation across multiple sectors.",
+      holding1_title: "Cross‑sector capability",
+      holding1_desc: "The holding enables analysis and participation in opportunities across segments — with disciplined governance, risk management, and value creation.",
+      holding1_pill: "Thesis • Allocation • Management",
+      holding2_title: "Strategy, structure & execution",
+      holding2_desc: "We structure investment decisions and growth initiatives with clarity: hypotheses, metrics, operating cadence, and consistent documentation.",
+      holding2_pill: "Governance • Metrics • Reporting",
+
+      how_h2: "How we work",
+      how_sub: "A simple method: understand, decide, execute — with transparency and discipline.",
+      how1_title: "1) Understand",
+      how1_desc: "Fast intake of context, goals, constraints, and risks — focused on what is material.",
+      how2_title: "2) Define direction",
+      how2_desc: "Alternatives, trade‑offs, and an action plan. Informed, documented decisions.",
+      how3_title: "3) Execute",
+      how3_desc: "Operating cadence, reporting, and issue tracking to ensure delivery.",
+
+      about_h2: "About",
+      about_sub: "Advisory and holding platform built for clarity, discipline, and delivery — in high‑demand environments.",
+      about_card_title: "Rigor, discretion, and pragmatism",
+      about_card_p1: "Deutschland was designed to support decisions involving multiple parties, short timelines, and high sensitivity — with alignment, precise communication, and execution.",
+      about_card_p2: "If you need a partner to structure and run initiatives with discipline and predictability, reach out.",
+      about_cta_primary: "Schedule a call",
+      about_cta_secondary: "Send an email",
+
+      contact_h2: "Contact",
+      contact_sub: "Share the context in a few lines — we reply quickly and objectively.",
+      contact_direct_title: "Reach us directly",
+      contact_direct_note: "We can work by email, phone, and WhatsApp (if preferred).",
+      contact_direct_pill: "Confidentiality & discretion",
+      contact_form_title: "Send a message",
+      form_send: "Send",
+      form_hint: "This form opens your email client with a prefilled message.",
+      form_ok: "Opening your email…",
+      footer_rights: "All rights reserved.",
+      form_name_ph: "Your name",
+      form_email_ph: "Your email",
+      form_message_ph: "Message (objective, timeline, context)",
+    }
+  };
+
+  function applyLang(lang){
+    document.documentElement.lang = (lang === "en") ? "en" : "pt-br";
+
+    // text nodes
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const k = el.getAttribute("data-i18n");
+      if(dict[lang][k]) el.textContent = dict[lang][k];
+    });
+
+    // placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+      const k = el.getAttribute("data-i18n-placeholder");
+      if(dict[lang][k]) el.setAttribute("placeholder", dict[lang][k]);
+    });
+
+    // toggle buttons
+    document.getElementById("btn-pt").setAttribute("aria-pressed", lang === "pt" ? "true" : "false");
+    document.getElementById("btn-en").setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+
+    // persist
+    try{ localStorage.setItem("lang", lang); }catch(e){}
+  }
+
+  // initial language: stored preference -> browser language -> PT default
+  const stored = (()=>{ try{ return localStorage.getItem("lang"); }catch(e){ return null; } })();
+  const browserIsEN = (navigator.language || "").toLowerCase().startsWith("en");
+  applyLang(stored || (browserIsEN ? "en" : "pt"));
+
+  document.getElementById("btn-pt").addEventListener("click", () => applyLang("pt"));
+  document.getElementById("btn-en").addEventListener("click", () => applyLang("en"));
+
+  // Contact form: build a mailto with subject/body
+  document.getElementById("contactForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const name = (fd.get("name") || "").toString().trim();
+    const email = (fd.get("email") || "").toString().trim();
+    const msg = (fd.get("message") || "").toString().trim();
+
+    const lang = (localStorage.getItem("lang") || "pt");
+    const subject = (lang === "en") ? "Contact — Deutschland Consultoria" : "Contato — Deutschland Consultoria";
+    const body = (lang === "en")
+      ? `Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`
+      : `Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${msg}`;
+
+    const url = `mailto:contato@deutschlandconsultoria.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    document.getElementById("formOk").style.display = "block";
+    window.location.href = url;
+    setTimeout(() => { document.getElementById("formOk").style.display = "none"; }, 2500);
+  });
+</script>
+</body>
+</html>
